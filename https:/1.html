@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+    
+        <title>Page Title</title>
+         
+
+
+        
+    </head>
+    <body>
+        <div class="stars-container" id="starsContainer"></div>
+        <div class="animation-card">
+                <h3 class="animation-title"></h3>
+                <p class="typewriter">Enter Your password</p>
+          <div class="image"></div>
+     <input type="number" class="text" placeholder="Password">
+        <div class="container">
+          
+    <button data-value="1">1</button>
+    <button data-value="2">2</button>
+    <button data-value="3">3</button>
+    <button data-value="4">4</button>
+    <button data-value="5">5</button>
+    <button data-value="6">6</button>
+    <button data-value="7">7</button>
+    <button data-value="8">8</button>
+    <button data-value="9">9</button>
+    <button data-value="0">0</button>
+    <button data-value="#">#</button>
+    <button data-action="back">✖</button>
+        </div>
+        <script>
+        // Generate stars dynamically
+        const starsContainer = document.getElementById('starsContainer');
+        const starCount = 100;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random position
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            
+            // Random size (1-5px)
+            const size = Math.random() * 4 + 1;
+            
+            // Random animation delay
+            const delay = Math.random() * 3;
+            
+            // Random color variation
+            const colors = ['#ffffff', '#e0c3fc', '#a78bfa', '#8b5cf6'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.background = color;
+            star.style.boxShadow = `0 0 ${size * 3}px ${color}`;
+            star.style.animationDelay = `${delay}s`;
+            
+            starsContainer.appendChild(star);
+        }
+        
+  
+    </script>
+    </body>
+</html>
